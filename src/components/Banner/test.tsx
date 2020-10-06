@@ -45,7 +45,7 @@ describe('<Banner />', () => {
     expect(ribbon).toBeInTheDocument();
     expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' });
     expect(ribbon).toHaveStyle({
-      height: '2.5rem',
+      height: '2.6rem',
       fontSize: '1.2rem'
     });
   });

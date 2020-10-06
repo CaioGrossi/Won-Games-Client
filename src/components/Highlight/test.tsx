@@ -52,7 +52,7 @@ describe('<Highlight />', () => {
       "'floatimage content'"
     );
 
-    expect(container.firstChild).toHaveStyleRule('text-aligns', 'right', {
+    expect(container.firstChild).toHaveStyleRule('text-align', 'right', {
       modifier: `${S.Content}`
     });
   });
@@ -67,7 +67,7 @@ describe('<Highlight />', () => {
       "'content floatimage'"
     );
 
-    expect(container.firstChild).toHaveStyleRule('text-aligns', 'left', {
+    expect(container.firstChild).toHaveStyleRule('text-align', 'left', {
       modifier: `${S.Content}`
     });
   });
