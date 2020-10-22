@@ -98,10 +98,12 @@ export const MenuFull = styled.nav<MenuFullProps>`
     left: 0;
     right: 0;
     height: 100vh;
+
     overflow: hidden;
     transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
     pointer-events: ${isOpen ? 'all' : 'none'};
+    z-index: ${theme.layers.alwaysOnTop};
 
     > svg {
       position: absolute;
