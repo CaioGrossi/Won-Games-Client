@@ -6,11 +6,14 @@ import CheckBox from '.';
 
 describe('<CheckBox />', () => {
   it('should render with label', () => {
-    renderWithTheme(<CheckBox label="checkbox label" labelFor="check" />);
+    const { container } = renderWithTheme(
+      <CheckBox label="checkbox label" labelFor="check" />
+    );
 
     expect(screen.getByRole('checkbox')).toBeInTheDocument();
     expect(screen.getByLabelText(/checkbox label/i)).toBeInTheDocument();
     expect(screen.getByText(/checkbox label/i)).toHaveAttribute('for', 'check');
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with no label', () => {
