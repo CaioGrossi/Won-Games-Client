@@ -1,0 +1,54 @@
+import { FormWrapper, FormLink } from 'components/Form';
+
+import Link from 'next/link';
+import TextField from 'components/TextField';
+import Button from 'components/Button';
+
+import { Email, Lock, AccountCircle } from '@styled-icons/material-outlined';
+
+const FormSignUp = () => (
+  <FormWrapper>
+    <form>
+      <TextField
+        name="name"
+        placeholder="Name"
+        type="text"
+        icon={<AccountCircle />}
+      />
+
+      <TextField
+        name="email"
+        placeholder="Email"
+        type="email"
+        icon={<Email />}
+      />
+
+      <TextField
+        name="password"
+        placeholder="Password"
+        type="password"
+        icon={<Lock />}
+      />
+
+      <TextField
+        name="confirmPassword"
+        placeholder="Confirm password"
+        type="password"
+        icon={<Lock />}
+      />
+
+      <Button size="large" fullWidth>
+        Sign up Now
+      </Button>
+
+      <FormLink>
+        Already have an account?{' '}
+        <Link href="/sign-in">
+          <a>Sign in</a>
+        </Link>
+      </FormLink>
+    </form>
+  </FormWrapper>
+);
+
+export default FormSignUp;

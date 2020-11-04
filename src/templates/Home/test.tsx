@@ -17,7 +17,7 @@ const props = {
   upcommingHighlight: highlightMock,
   upcommingMoreGames: [gamesMock[0]],
   freeGames: [gamesMock[0]],
-  freeHighligth: highlightMock
+  freeHighlight: highlightMock
 };
 
 describe('<Home />', () => {
@@ -51,6 +51,6 @@ describe('<Home />', () => {
     // card game ( 5 sections com 1 card cada = 5x1 = 5)
     expect(screen.getAllByText(/population zero/i)).toHaveLength(5);
     // highlight
-    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(2);
+    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3);
   });
 });

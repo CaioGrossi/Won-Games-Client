@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components';
+import media from 'styled-media-query';
 import { HeadingProps, LineColors } from '.';
 
 const wrapperModifiers = {
@@ -12,6 +13,14 @@ const wrapperModifiers = {
 
   medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.xlarge};
+
+    ${media.greaterThan('medium')`
+      font-size: ${theme.font.sizes.xxlarge}
+    `}
+  `,
+
+  huge: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.huge};
   `,
 
   lineLeft: (theme: DefaultTheme, lineColor: LineColors) => css`
@@ -38,9 +47,9 @@ export const Wrapper = styled.h2<HeadingProps>`
   ${({ theme, color, lineLeft, lineBottom, size, lineColor }) => css`
     color: ${theme.colors[color!]};
 
-    ${lineLeft && wrapperModifiers.lineLeft(theme, lineColor)}
+    ${lineLeft && wrapperModifiers.lineLeft(theme, lineColor!)}
     ${lineBottom &&
-    wrapperModifiers.lineBottom(theme, lineColor)}
+    wrapperModifiers.lineBottom(theme, lineColor!)}
     ${!!size &&
     wrapperModifiers[size](theme)}
   `}
