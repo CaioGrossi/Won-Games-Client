@@ -9,7 +9,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  flex: 1 0 auto;
+  ${({ theme }) => css`
+    flex: 1 0 auto;
+    margin-top: ${theme.spacings.xlarge};
+  `}
 `;
 
 export const SectionFooter = styled.section`
@@ -19,6 +22,7 @@ export const SectionFooter = styled.section`
     padding-top: ${theme.spacings.xxlarge};
     background-color: ${theme.colors.white};
     clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
+
     ${media.greaterThan('medium')`
       padding-top: calc(${theme.spacings.xxlarge} * 2);
       clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0 100%);
