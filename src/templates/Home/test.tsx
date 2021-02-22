@@ -13,9 +13,8 @@ const props = {
   newGames: [gamesMock[0]],
   mostPopularHighlight: highlightMock,
   mostPopularGames: [gamesMock[0]],
-  upcommingGames: [gamesMock[0]],
-  upcommingHighlight: highlightMock,
-  upcommingMoreGames: [gamesMock[0]],
+  upcomingGames: [gamesMock[0]],
+  upcomingHighlight: highlightMock,
   freeGames: [gamesMock[0]],
   freeHighlight: highlightMock
 };
@@ -43,6 +42,6 @@ describe('<Home />', () => {
     renderWithTheme(<Home {...props} />);
 
     expect(screen.getByTestId('Mock Banner Slider')).toBeInTheDocument();
-    expect(screen.getAllByTestId('Mock showcase')).toHaveLength(5);
+    expect(screen.getAllByTestId('Mock showcase')).toHaveLength(4);
   });
 });
