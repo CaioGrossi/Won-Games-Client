@@ -10,7 +10,8 @@ import highlightMock from 'components/Highlight/mock';
 const props = {
   games: gamesMock,
   recommendedHighlight: highlightMock,
-  recommendedGames: gamesMock
+  recommendedGames: gamesMock,
+  recommendedTitle: 'You may like these games'
 };
 
 jest.mock('components/Showcase', () => ({
@@ -37,6 +38,7 @@ describe('<Wishlist />', () => {
       <Wishlist
         recommendedGames={gamesMock}
         recommendedHighlight={highlightMock}
+        recommendedTitle={props.recommendedTitle}
       />
     );
     expect(screen.queryByText(/population zero/i)).not.toBeInTheDocument();
