@@ -4,6 +4,8 @@ import GameCard from 'components/GameCard';
 import Base from 'templates/Base';
 import { KeyboardArrowDown as ArrowDown } from '@styled-icons/material-outlined';
 import { Grid } from 'components/Grid';
+import { useQueryGames } from 'graphql/queries/games';
+
 import * as S from './styles';
 
 export type GamesTemplateProps = {
@@ -11,13 +13,24 @@ export type GamesTemplateProps = {
   filterItems: ItemProps[];
 };
 
-const GamesTemplate = ({ filterItems, games = [] }: GamesTemplateProps) => {
+const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
+  const { data, loading, fetchMore } = useQueryGames({
+    variables: {
+      limit: 15
+    }
+  });
+
   const handleFilter = () => {
     return;
   };
 
   const handleShowMore = () => {
-    return;
+    fetchMore({
+      variables: {
+        limit: 15,
+        start: data?.games.length
+      }
+    });
   };
 
   return (
@@ -25,18 +38,29 @@ const GamesTemplate = ({ filterItems, games = [] }: GamesTemplateProps) => {
       <S.Main>
         <ExploreSidebar items={filterItems} onFilter={handleFilter} />
 
-        <section>
-          <Grid>
-            {games.map((item) => (
-              <GameCard key={item.title} {...item} />
-            ))}
-          </Grid>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <section>
+            <Grid>
+              {data?.games.map((game) => (
+                <GameCard
+                  key={game.slug}
+                  title={game.name}
+                  slug={game.slug}
+                  developer={game.developers[0].name}
+                  img={`http://localhost:1337${game.cover!.url}`}
+                  price={game.price}
+                />
+              ))}
+            </Grid>
 
-          <S.ShowMore role="button" onClick={handleShowMore}>
-            <p>Show more</p>
-            <ArrowDown size={35} />
-          </S.ShowMore>
-        </section>
+            <S.ShowMore role="button" onClick={handleShowMore}>
+              <p>Show more</p>
+              <ArrowDown size={35} />
+            </S.ShowMore>
+          </section>
+        )}
       </S.Main>
     </Base>
   );

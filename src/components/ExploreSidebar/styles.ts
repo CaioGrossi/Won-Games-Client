@@ -45,7 +45,6 @@ export const Items = styled.div`
     & > div:not(:last-of-type) {
       margin-bottom: ${theme.spacings.xsmall};
     }
-
     & + div {
       border-top: 0.1rem solid ${rgba(theme.colors.gray, 0.2)};
       margin-top: ${theme.spacings.small};
