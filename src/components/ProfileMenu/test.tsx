@@ -25,6 +25,8 @@ describe('<ProfileMenu />', () => {
 
   it('should render correctly the active link', () => {
     renderWithTheme(<ProfileMenu activeLink="/profile/cards" />);
+
+    screen.logTestingPlaygroundURL();
     expect(screen.getByRole('link', { name: /my cards/i })).toHaveStyle({
       background: theme.colors.primary,
       color: theme.colors.white

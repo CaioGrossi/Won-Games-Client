@@ -60,7 +60,6 @@ export const Link = styled.a<LinkProps>`
 
     ${!isActive && linkModifiers.default(theme)}
     
-    ${isActive &&
-    linkModifiers.active(theme)}
+    ${isActive && linkModifiers.active(theme)}
   `}
 `;
