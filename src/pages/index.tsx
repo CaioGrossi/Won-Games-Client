@@ -18,12 +18,13 @@ export async function getStaticProps() {
     query: QUERY_HOME,
     variables: {
       date: TODAY
-    }
+    },
+    fetchPolicy: 'no-cache'
   });
 
   return {
+    revalidate: 10,
     props: {
-      revalidate: 10,
       banners: bannerMapper(banners),
       newGamesTitle: sections?.newGames?.title,
       newGames: gamesMapper(newGames),
