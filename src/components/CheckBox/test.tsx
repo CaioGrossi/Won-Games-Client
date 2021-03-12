@@ -1,12 +1,11 @@
-import { screen, waitFor } from '@testing-library/react';
-import { renderWithTheme } from 'utils/tests/helpers';
+import { render, screen, waitFor } from 'utils/test-utils';
 import userEvent from '@testing-library/user-event';
 
 import CheckBox from '.';
 
 describe('<CheckBox />', () => {
   it('should render with label', () => {
-    const { container } = renderWithTheme(
+    const { container } = render(
       <CheckBox label="checkbox label" labelFor="check" />
     );
 
@@ -17,13 +16,13 @@ describe('<CheckBox />', () => {
   });
 
   it('should render with no label', () => {
-    renderWithTheme(<CheckBox />);
+    render(<CheckBox />);
 
     expect(screen.queryByLabelText('Checkbox')).not.toBeInTheDocument();
   });
 
   it('should render with black label', () => {
-    renderWithTheme(
+    render(
       <CheckBox label="checkbox label" labelFor="check" labelColor="black" />
     );
 
@@ -35,7 +34,7 @@ describe('<CheckBox />', () => {
   it('should render dispatch onCheck when status changes', async () => {
     const onCheck = jest.fn();
 
-    renderWithTheme(<CheckBox label="Checkbox" onCheck={onCheck} />);
+    render(<CheckBox label="Checkbox" onCheck={onCheck} />);
 
     expect(onCheck).not.toHaveBeenCalled();
 
@@ -50,7 +49,7 @@ describe('<CheckBox />', () => {
   it('should render dispatch onCheck when status changes', async () => {
     const onCheck = jest.fn();
 
-    renderWithTheme(<CheckBox label="Checkbox" onCheck={onCheck} isChecked />);
+    render(<CheckBox label="Checkbox" onCheck={onCheck} isChecked />);
 
     userEvent.click(screen.getByRole('checkbox'));
     await waitFor(() => {
@@ -61,7 +60,7 @@ describe('<CheckBox />', () => {
   });
 
   it('should be accessible with tab', () => {
-    renderWithTheme(<CheckBox label="checkbox label" labelFor="check" />);
+    render(<CheckBox label="checkbox label" labelFor="check" />);
 
     expect(document.body).toHaveFocus();
 
