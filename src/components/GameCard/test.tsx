@@ -3,6 +3,7 @@ import GameCard from '.';
 import theme from 'styles/theme';
 
 const props = {
+  id: '1',
   slug: 'population-zero',
   title: 'GTA',
   developer: 'Rockstar',

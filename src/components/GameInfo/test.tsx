@@ -2,6 +2,7 @@ import { render, screen } from 'utils/test-utils';
 import GameInfo from '.';
 
 const props = {
+  id: '1',
   title: 'My game',
   description: 'My game description',
   price: 210
