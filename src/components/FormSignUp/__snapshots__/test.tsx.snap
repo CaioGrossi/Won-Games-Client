@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FormSignUp /> should render the form 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -115,12 +121,6 @@ exports[`<FormSignUp /> should render the form 1`] = `
   border-bottom: 0.1rem solid #29b3a3;
 }
 
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 <main
   class="c0"
 >
@@ -193,7 +193,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           class="c5"
           name="email"
           placeholder="Email"
-          type="email"
+          type="text"
           value=""
         />
       </div>
@@ -281,7 +281,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
         </div>
         <input
           class="c5"
-          name="confirmPassword"
+          name="confirm_password"
           placeholder="Confirm password"
           type="password"
           value=""

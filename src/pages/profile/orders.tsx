@@ -1,6 +1,8 @@
 import Profile from 'templates/Profile';
 import OrdersList, { OrdersListProps } from 'components/OrdersList';
 import mockItems from 'components/OrdersList/mock';
+import { GetServerSidePropsContext } from 'next';
+import protectedRoutes from 'utils/protected-routes';
 
 export default function Cards({ items }: OrdersListProps) {
   return (
@@ -10,10 +12,12 @@ export default function Cards({ items }: OrdersListProps) {
   );
 }
 
-export function getServerSideProps() {
+export function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = protectedRoutes(context);
   return {
     props: {
-      items: mockItems
+      items: mockItems,
+      session
     }
   };
 }
