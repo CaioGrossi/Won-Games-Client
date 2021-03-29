@@ -4,7 +4,12 @@ import Button from 'components/Button';
 
 import * as S from './styles';
 
-const FormProfile = () => (
+export type FormProfileProps = {
+  username?: string;
+  email?: string;
+};
+
+const FormProfile = ({ username, email }: FormProfileProps) => (
   <S.Wrapper>
     <Heading color="black" lineBottom size="small">
       My profile
@@ -12,10 +17,10 @@ const FormProfile = () => (
 
     <S.Form>
       <TextField
-        name="name"
-        placeholder="Name"
-        label="Name"
-        initialValue="Caio Grossi"
+        name="usernmame"
+        placeholder="Username"
+        label="Username"
+        initialValue={username}
       />
 
       <TextField
@@ -23,7 +28,7 @@ const FormProfile = () => (
         placeholder="E-mail"
         label="E-mail"
         type="email"
-        initialValue="caiogrossi6@gmail.com"
+        initialValue={email}
         disabled
       />
 
