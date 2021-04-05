@@ -6,7 +6,7 @@ import { signIn } from 'next-auth/client';
 import { Email, ErrorOutline } from '@styled-icons/material-outlined';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { FieldErrors } from 'utils/validations';
+import { FieldErrors, forgotValidate } from 'utils/validations';
 
 const FormForgotPassword = () => {
   const [formError, setFormError] = useState('');
@@ -24,7 +24,7 @@ const FormForgotPassword = () => {
     event.preventDefault();
     setLoading(true);
 
-    const errors = {};
+    const errors = forgotValidate(values);
 
     if (Object.keys(errors).length) {
       setFieldError(errors);
