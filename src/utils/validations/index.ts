@@ -55,7 +55,7 @@ export function forgotValidate(values: ForgotValideteParams) {
 
 type ResetValidateParams = {
   password: string;
-  confirmPassword: string;
+  confirm_password: string;
 };
 
 export function resetValidate(values: ResetValidateParams) {
