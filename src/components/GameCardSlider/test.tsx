@@ -2,6 +2,8 @@ import 'match-media-mock';
 import { render, screen } from 'utils/test-utils';
 import items from './mock';
 
+import 'session.mock';
+
 import GameCardSlider from '.';
 
 describe('<GameSlider />', () => {

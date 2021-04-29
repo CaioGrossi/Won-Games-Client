@@ -1,5 +1,6 @@
 import { render, screen } from 'utils/test-utils';
 import GameInfo from '.';
+import 'session.mock';
 
 const props = {
   id: '1',
@@ -29,7 +30,7 @@ describe('<GameInfo />', () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole('button', { name: /wishlist/i })
+      screen.getByRole('button', { name: /add to wishlist/i })
     ).toBeInTheDocument();
   });
 });

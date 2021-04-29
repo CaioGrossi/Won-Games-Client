@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GameInfo /> should render game informations 1`] = `
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 .c1 {
   color: #030517;
   position: relative;
@@ -65,6 +59,51 @@ exports[`<GameInfo /> should render game informations 1`] = `
   border-right-width: 2rem;
 }
 
+.c0 {
+  position: relative;
+  background: #FAFAFA;
+  padding: 2.4rem;
+}
+
+.c0 .c2 {
+  right: -1rem;
+}
+
+.c0 .c2:before {
+  border-right-width: 1rem;
+}
+
+.c4 {
+  font-size: 1.6rem;
+  color: #8F8F8F;
+  margin-bottom: 2.4rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 > button {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -89,6 +128,10 @@ exports[`<GameInfo /> should render game informations 1`] = `
   height: 5rem;
   font-size: 1.6rem;
   padding: 0.8rem 4.8rem;
+}
+
+.c6:focus {
+  outline: 1px dashed;
 }
 
 .c6:hover {
@@ -131,6 +174,10 @@ exports[`<GameInfo /> should render game informations 1`] = `
   color: #F231A5;
 }
 
+.c8:focus {
+  outline: 1px dashed;
+}
+
 .c8:hover {
   background: none;
 }
@@ -145,45 +192,6 @@ exports[`<GameInfo /> should render game informations 1`] = `
 
 .c8:hover {
   color: #e20e8d;
-}
-
-.c0 {
-  position: relative;
-  background: #FAFAFA;
-  padding: 2.4rem;
-}
-
-.c0 .c2 {
-  right: -1rem;
-}
-
-.c0 .c2:before {
-  border-right-width: 1rem;
-}
-
-.c4 {
-  font-size: 1.6rem;
-  color: #8F8F8F;
-  margin-bottom: 2.4rem;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c5 > button {
-  width: 100%;
-  margin-bottom: 0.8rem;
 }
 
 @media (min-width:768px) {
@@ -275,6 +283,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
     >
       <svg
         aria-hidden="true"
+        aria-label="Add to wishlist"
         class="c7"
         fill="currentColor"
         focusable="false"
@@ -290,7 +299,7 @@ exports[`<GameInfo /> should render game informations 1`] = `
         />
       </svg>
       <span>
-        Wishlist
+        Add to wishlist
       </span>
     </button>
   </div>
