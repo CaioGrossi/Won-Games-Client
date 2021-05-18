@@ -42,6 +42,8 @@ const FormSignIn = () => {
       callbackUrl: `${window.location.origin}${query?.callbackUrl || ''}`
     });
 
+    console.log(result);
+
     if (result?.url) {
       return push(result.url);
     }
