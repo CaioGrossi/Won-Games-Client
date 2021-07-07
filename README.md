@@ -34,4 +34,5 @@ para executar o projeto.
 * GraphQL
 * Cypress
 * Stripe
+* Storybook
 
