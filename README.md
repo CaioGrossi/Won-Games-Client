@@ -1,6 +1,11 @@
 # Won Games Client
 
-Client feito junto ao curso de [React Avançado](https://reactavancado.com.br/) (mais especificamente no módulo 3) promovido pelo William Justen. Na produção desse client é usado boas práticas em todo o projeto como reaproveiatemento de código e TDD. No projeto foram exploradas as tecnologias mais usadas a fundo, como next, react, React Testing Library, Styled Components, Jest, Typescript e GrapQL.
+Front End desenvolvido para o e-commerce Won Games durante o curso [React Avançado](https://reactavancado.com.br/). O projeto tem como tecnologias principais React, NextJs e Typescript. Durante todo o projeto foram priorizadas as boas práticas e utilização das novas features que acompanham o React e NextJs, criando componentes genéricos para toda a aplicação e separação de responsabilidade de data fetching e apresentação dos dados. 
+
+Foi possível explorar a linguagem de consulta GraphQL junto com o Apollo GraphQL Client para o consumo dos dados. Todos os componentes, paginas, hooks customizados e helpers da aplicação possuem testes unitários com Jest e React Testing Library. Na parte de pagamento foi possível explorar a ferramenta Stripe
+para processamento dos pagamentos dos jogos.
+
+Os testes de integração da aplicação foram feitos com Cypress, utilizando comandos customizados e garantindo a boa funcionalidade da aplicação como um todo.
 
 
 ## Pré-requisitos
@@ -27,5 +32,6 @@ para executar o projeto.
 * TDD
 * Apollo Client
 * GraphQL
-* Strapi
+* Cypress
+* Stripe
 
